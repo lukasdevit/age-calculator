@@ -36,9 +36,12 @@ function errorHandler(thing, error) {
       errorHandler(variable, "futureError");
       return false;
     }
+  
 
-    if (variable === "year" && !isValid(new Date(value, document.querySelector("#month").value - 1, document.querySelector("#day").value))) {
-      errorHandler(variable, "notValidDate");
+    const dateString = `${document.querySelector("#year").value}-${document.querySelector("#month").value}-${document.querySelector("#day").value}`;
+    const date = dayjs(dateString).format("YYYY-MM-DD");
+    if (date !== dateString) {
+      errorHandler("day", "notValidDate");
       return false;
     }
   
@@ -47,7 +50,7 @@ function errorHandler(thing, error) {
     errorTarget.classList.remove("error");
     src.style.border = "1px solid var(--color-light-grey)";
     const label = document.querySelector("." + variable + "-label");
-    label.style.color = "var(--color-light-grey)";
+    label.style.color = "var(--color-smokey-grey)";
   
     return true;
   }
@@ -86,7 +89,7 @@ function errorHandler(thing, error) {
   
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-  
+      
       const list = ["day", "month", "year"];
       const errors = [];
   
@@ -101,6 +104,5 @@ function errorHandler(thing, error) {
       }
     });
   }
-  
   setupFormValidation();
   
