@@ -36,6 +36,11 @@ function errorHandler(thing, error) {
       errorHandler(variable, "futureError");
       return false;
     }
+
+    if (variable === "year" && !isValid(new Date(value, document.querySelector("#month").value - 1, document.querySelector("#day").value))) {
+      errorHandler(variable, "notValidDate");
+      return false;
+    }
   
     const errorTarget = document.querySelector("." + variable + "-error");
     errorTarget.textContent = "";
@@ -52,14 +57,12 @@ function errorHandler(thing, error) {
     const day = document.querySelector("#day").value;
     const month = document.querySelector("#month").value;
     const year = document.querySelector("#year").value;
-    const inputDate = new Date(year, month - 1, day); // Fixed month index
+    const inputDate = new Date(year, month - 1, day);
   
-    // Validate all fields
     if (validate("day") === false || validate("month") === false || validate("year") === false) {
       return false;
     }
   
-    // No errors, calculate age
     const ageInMilliseconds = currentDate - inputDate;
     const ageInSeconds = ageInMilliseconds / 1000;
     const ageInMinutes = ageInSeconds / 60;
@@ -70,7 +73,6 @@ function errorHandler(thing, error) {
     const months = Math.floor((ageInDays % 365) / 30);
     const days = Math.floor(ageInDays % 30);
   
-    // Update age display
     const yearToChange = document.querySelector("#year-value");
     const monthToChange = document.querySelector("#month-value");
     const dayToChange = document.querySelector("#day-value");
@@ -90,18 +92,15 @@ function errorHandler(thing, error) {
   
       list.forEach((element) => {
         if (!validate(element, errors)) {
-          // Collect validation errors
           return false;
         }
       });
   
       if (errors.length === 0) {
-        // No errors, calculate age
         calculateAge();
       }
     });
   }
   
-  // Call the setupFormValidation function to initialize form validation
   setupFormValidation();
   
