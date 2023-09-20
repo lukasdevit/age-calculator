@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
+        :root {
+            --color-purple: hsl(259, 100%, 65%);
+            --color-light-red: hsl(0, 100%, 67%);
+            --color-white: hsl(0, 0%, 100%);
+            --color-off-white: hsl(0, 0%, 94%);
+            --color-light-grey: hsl(0, 0%, 86%);
+            --color-smokey-grey: hsl(0, 1%, 44%);
+            --color-off-black: hsl(0, 0%, 8%);
+            background-color: var(--color-off-white);
+            font-family: "Poppins";
+        }
+
+        /* Delete arrows from number input */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .container {
+            padding: 3em 5em 3em 3em;
+            background: var(--color-white);
+            border-radius: 20px 20px 140px 20px;
+        }
+
+        .date-form {
+            position: relative;
+            padding-right: 100px;
+            border-bottom: 1px solid var(--color-light-grey);
+            color: var(--color-smokey-grey);
+        }
+
+        .inputs {
+            display: flex;
+            padding-bottom: 50px;
+        }
+
+        .input-element {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input {
+            width: 100px;
+            padding: 15px 15px 10px 15px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            border: 1px solid var(--color-light-grey);
+            border-radius: 0.2em;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .input:hover {
+            border: 1px solid var(--color-purple);
+            cursor: pointer;
+        }
+
+        .input:focus {
+            outline: none;
+            border: 1px solid var(--color-purple);
+        }
+
+        .input-label {
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: small;
+        }
+
+        .submit {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(50%, 50%);
+            background-image: url("./assets/images/icon-arrow.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: var(--color-purple);
+            border: none;
+            border-radius: 100%;
+            width: 46px;
+            height: 46px;
+            padding: 40px;
+        }
+
+        .submit:hover {
+            cursor: pointer;
+            background-color: var(--color-off-black);
+        }
+
+        .age-calculation {
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        .age {
+            margin: 0;
+            font-size: 80px;
+            font-weight: 800;
+            font-style: italic;
+            line-height: 1;
+        }
+
+        .age-label {
+            color: var(--color-purple);
+        }
+
+        .error {
+            color: var(--color-light-red);
+            font-size: 12px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        @media screen and (max-width: 720px) {
+            .centered {
+                position: static;
+                transform: none;
+            }
+
+            .container {
+                width: auto;
+                min-width: 335px;
+                padding: 20px;
+            }
+
+            .date-form {
+                display: flex;
+                flex-direction: column;
+                padding-right: 0;
+                align-items: center;
+            }
+
+            .inputs {
+                flex: 1;
+                justify-content: space-evenly;
+                padding: 0;
+                margin: 0;
+            }
+
+            .input {
+                width: 80px;
+                margin: 0 10px;
+                padding: 10px;
+                font-size: 24px;
+            }
+
+            .submit {
+                position: static;
+                transform: translateY(50%);
+            }
+
+            .age-calculation {
+                margin-top: 70px;
+            }
+
+            .age {
+                font-size: 50px;
+            }
+
+            .error {
+                font-size: 10px;
+            }
+        }

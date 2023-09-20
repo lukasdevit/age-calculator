@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Front End Challenge named 'Age Calculator'. Author: lukasdevit">
+    <title>Frontend Mentor | Age calculator app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container centered">
+    <form class="date-form js-calculate-data">
+        <div class="inputs">
+            <div class="input-element">
+                <label for="day" class="input-label day-label">Day</label>
+                <input
+                    type="number"
+                    name="day"
+                    id="day"
+                    placeholder="DD"
+                    class="input"
+                />
+                <label for="day" class="day-error js-errors"></label>
+            </div>
+            <div class="input-element">
+                <label for="month" class="input-label month-label">Month</label>
+                <input
+                    type="number"
+                    name="month"
+                    id="month"
+                    placeholder="MM"
+                    class="input"
+                /><label for="month" class="month-error js-errors"></label>
+            </div>
+            <div class="input-element">
+                <label for="year" class="input-label year-label">Year</label>
+                <input
+                    type="number"
+                    name="year"
+                    id="year"
+                    placeholder="YYYY"
+                    class="input"
+                /><label for="year" class="year-error js-errors"></label>
+            </div>
+        </div>
+        <input
+            type="submit"
+            class="submit"
+            value=""
+            id="submit"
+            title="Submit Button"
+        />
+    </form>
+    <div class="age-calculation js-calculate-result">
+        <p class="age">
+            <label class="age-label" id="year-value">- -</label> years
+        </p>
+        <p class="age">
+            <label class="age-label" id="month-value">- -</label> months
+        </p>
+        <p class="age">
+            <label class="age-label" id="day-value">- -</label> days
+        </p>
+    </div>
+</div>
+<footer class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+    >Frontend Mentor</a
+    >. Coded by
+    <a href="https://www.frontendmentor.io/profile/lukasdevit">lukasdevit</a>
+</footer>
+</body>
+<script src="script.js"></script>
+</html>
